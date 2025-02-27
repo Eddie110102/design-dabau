@@ -54,6 +54,7 @@ nav {
   height: 100%;
   font-size: 20px;
   transition: 0.7s;
+  z-index: 10;
 }
 
 nav.active {

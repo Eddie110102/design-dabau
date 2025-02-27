@@ -1,4 +1,8 @@
 /* 輪播牆 Carousel */
+#carousel-box {
+  position: relative;
+}
+
 #carousel {
   height: calc(100vh - 83px);
   position: relative;
@@ -13,6 +17,25 @@
   animation: fade infinite 9s;
 }
 
+#carousel-textarea {
+  box-sizing: border-box;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  width: clamp(100%, 500px, 30%);
+  height: clamp(150px, 200px, 100%);
+  z-index: 2;
+  background-color: rgba(128, 122, 103, 0.4);
+  text-shadow: 5px 5px 5px black;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 20px;
+  color: white;
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -25,5 +48,18 @@
   33%,
   100% {
     opacity: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #carousel-textarea {
+    width: 40%;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    height: 100%;
+    font-size: 30px;
+    padding: 20px 40px;
+    justify-content: center;
   }
 }
