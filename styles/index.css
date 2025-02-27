@@ -14,13 +14,16 @@
 }
 
 @keyframes fade {
-  0%,
-  100% {
+  0% {
     opacity: 0;
   }
-
   10%,
-  90% {
+  30% {
     opacity: 1;
+  }
+
+  33%,
+  100% {
+    opacity: 0;
   }
 }
