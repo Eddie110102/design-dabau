@@ -80,7 +80,7 @@
 
 .about-us .text-box h2 {
   font-size: 30px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
   margin-bottom: 30px;
 }
 
@@ -132,23 +132,104 @@
   font-size: 30px;
 }
 
+.home-design .title {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 10px;
+  box-sizing: border-box;
+}
+
+.home-design .title .line {
+  border-bottom: 1px solid black;
+}
+
+.home-design .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.home-design .content .left .up {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  column-gap: 30px;
+}
+
+.home-design .content .left .up .image-content {
+  width: 50%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.home-design .content .left .up .image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-design .content .left .up .text-content {
+  width: 50%;
+}
+
+.home-design .content .left .up .text-content h3 {
+  font-weight: normal;
+  width: 90%;
+  margin: auto;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.home-design .content .left .down {
+  width: 90%;
+  margin: auto;
+  text-align: justify;
+  margin: 30px auto;
+}
+
+.home-design .content .down h3 {
+  margin: 30px 0 10px;
+  font-weight: normal;
+  font-size: 24px;
+  color: burlywood;
+}
+
+.home-design .content .right {
+  width: 90%;
+  max-width: 576px;
+  max-height: 768px;
+  aspect-ratio: 1/2;
+  margin: auto;
+  overflow: hidden;
+}
+
+.home-design .content .right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 @media screen and (min-width: 992px) {
   .home-design .title {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 0;
   }
 
   .home-design .title h2 {
-    margin: 50px 100px;
+    margin: 50px;
   }
+
   .home-design .title .line {
     flex-grow: 1;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
   }
 
   .home-design .content {
     display: flex;
+    flex-direction: row;
     align-items: center;
     width: 90%;
     margin: auto;
@@ -158,6 +239,7 @@
   }
   .home-design .content .left .up {
     display: flex;
+    column-gap: 0;
   }
   .home-design .content .left .up .text-content h3 {
     margin-left: 30px;
@@ -167,10 +249,10 @@
   .home-design .content .left .up .text-content h3:first-child {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 10px solid yellowgreen;
+    border-bottom: 5px solid burlywood;
   }
   .home-design .content .left .up .image-content {
-    width: 100%;
+    width: 50%;
     aspect-ratio: 3/4;
     overflow: hidden;
   }
@@ -179,5 +261,80 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .home-design .content .down h3 {
+    /* margin: 30px 0; */
+    font-weight: normal;
+    font-size: 24px;
+    color: burlywood;
+  }
+
+  .home-design .content .right {
+    margin: 0 50px;
+    width: 50%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+  .home-design .content .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* contact us */
+.contact-us {
+  margin: 50px;
+}
+
+.contact-us .text-content h2 {
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.contact-us .text-content ul {
+  list-style: none;
+}
+.contact-us .text-content ul li {
+  display: flex;
+  column-gap: 20px;
+}
+
+.contact-us .text-content a {
+  color: burlywood;
+}
+
+.contact-us .text-content ul .info :first-child {
+  width: 75px;
+  text-align-last: justify;
+}
+
+.contact-us .text-content ul li iframe:first-child {
+  margin: 20px 0;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.contact-us .text-content ul .prove {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.contact-us .text-content ul .prove a {
+  width: 20%;
+  overflow: hidden;
+}
+
+.contact-us .text-content ul .prove a img {
+  width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .contact-us .text-content ul .prove img {
+    max-width: 150px;
   }
 }

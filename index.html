@@ -12,6 +12,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- lightbox2 -->
+    <link rel="stylesheet" href="./styles/lightbox.css" />
     <!-- 共用樣式 -->
     <link rel="stylesheet" href="./styles/default.css" />
     <!-- 各自頁面樣式 -->
@@ -110,9 +112,73 @@
             </div>
             <div class="down">
               <h3>客製化訂做 Custom Made</h3>
+              <p>
+                作工(手路)細膩，價格實在，服務態度良好，客製化訂做歡迎比較，
+                有配合工班，也有配合室內設計公司代工！
+                可依照您喜歡的風格及需求、預算，給您最適當的建議！
+              </p>
             </div>
           </div>
-          <div class="right">right</div>
+          <div class="right">
+            <img src="./images/home-design-2.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="contact-us">
+        <div class="text-content">
+          <h2>聯繫我們 Contact Us</h2>
+          <ul>
+            <li class="info">
+              <div>聯絡人</div>
+              <div>黃福翔</div>
+            </li>
+            <li class="info">
+              <div>電話</div>
+              <div><a href="tel:0912801981">0912-801-981</a></div>
+            </li>
+            <li class="info">
+              <div>傳真</div>
+              <div>02-8252-7988</div>
+            </li>
+            <li class="info">
+              <div>信箱</div>
+              <div>
+                <a
+                  href="mailto:song777t@livemail.tw?subject=室內裝潢設計需求&body=姓名：%0a手機：%0a需求："
+                  >song777t@livemail.tw</a
+                >
+              </div>
+            </li>
+            <li class="info">
+              <div>地址</div>
+              <div>220 新北市板橋區懷德街191巷26弄1-3號</div>
+            </li>
+            <li>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.1273682475316!2d121.47812677460867!3d25.029751277819127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9e40fea748d%3A0xbdc8809a0ec07f4b!2z5aSn5a-25a6k5YWn6KOd5r2i6Kit6KiI!5e0!3m2!1szh-TW!2sph!4v1742307530537!5m2!1szh-TW!2sph"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </li>
+            <li class="prove">
+              <a
+                href="./images/contact-us-1.png"
+                data-lightbox="contact-us"
+                data-title="獎盃"
+                ><img src="./images/contact-us-1.png" alt="獎盃"
+              /></a>
+              <a
+                href="./images/home-design-1.jpg"
+                data-lightbox="contact-us"
+                data-title="獎盃"
+                ><img src="./images/home-design-1.jpg" alt="獎盃"
+              /></a>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
@@ -121,5 +187,14 @@
 
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/carousel.js"></script>
+    <script src="./scripts/lightbox-plus-jquery.min.js"></script>
+    <script>
+      lightbox.option({
+        resizeDuration: 200,
+        wrapAround: true,
+        alwaysShowNavOnTouchDevices: true,
+        albumLabel: "",
+      });
+    </script>
   </body>
 </html>
