@@ -17,7 +17,8 @@ const carouselImage = [
 
 for (let i = 0; i < carouselImage.length; i++) {
   const img = document.createElement("img");
-  img.setAttribute("src", `../images/${carouselImage[i].imgSrc}`);
+  img.setAttribute("src", `./images/${carouselImage[i].imgSrc}`);
+  // img.setAttribute("src", `../images/${carouselImage[i].imgSrc}`);
   img.setAttribute("alt", carouselImage[i].title);
   img.style.animationDelay = `${i * 3}s`;
 
