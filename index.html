@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google" content="notranslate" />
     <title>大寶室內裝潢設計 | DaBau Interior Design</title>
     <!-- fontawesome -->
     <link
@@ -13,7 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- lightgallery -->
-    <link rel="stylesheet" href="./styles/lightgallery-bundle.min.css" />
+    <link type="text/css" rel="stylesheet" href="./styles/lightgallery.css" />
     <!-- 共用樣式 -->
     <link rel="stylesheet" href="./styles/default.css" />
     <!-- 各自頁面樣式 -->
@@ -194,7 +195,7 @@
 
     <script src="./scripts/menu.js"></script>
     <script src="./scripts/carousel.js"></script>
-    <script src="./scripts/lightgallery.min.js"></script>
+    <script src="./scripts/lightgallery.js"></script>
     <script>
       lightGallery(document.getElementById("static-thumbnails"), {
         thumbnail: true,
@@ -203,6 +204,7 @@
         download: false,
         enableSwipe: true,
         escKey: true,
+        thumbHeight: "0px",
       });
     </script>
   </body>
