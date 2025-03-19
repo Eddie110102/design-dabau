@@ -135,7 +135,7 @@
 .home-design .title {
   display: flex;
   flex-direction: column;
-  margin: 50px 10px;
+  margin: 50px 20px;
   box-sizing: border-box;
 }
 
@@ -154,7 +154,7 @@
   display: flex;
   width: 90%;
   margin: auto;
-  column-gap: 30px;
+  column-gap: 10px;
 }
 
 .home-design .content .left .up .image-content {
@@ -285,7 +285,7 @@
 
 /* contact us */
 .contact-us {
-  margin: 50px;
+  margin: 20px;
 }
 
 .contact-us .text-content h2 {
@@ -297,24 +297,39 @@
 .contact-us .text-content ul {
   list-style: none;
 }
-.contact-us .text-content ul li {
+.contact-us .text-content .list-flex .info {
   display: flex;
-  column-gap: 20px;
+  column-gap: 10px;
+  margin-bottom: 15px;
 }
 
 .contact-us .text-content a {
   color: burlywood;
 }
 
-.contact-us .text-content ul .info :first-child {
-  width: 75px;
-  text-align-last: justify;
+.contact-us .text-content .list-flex {
+  display: flex;
+  flex-direction: column;
 }
 
-.contact-us .text-content ul li iframe:first-child {
-  margin: 20px 0;
+/* .contact-us .text-content .list-flex > * {
+  width: 50%;
+} */
+
+.contact-us .text-content .list-flex .info > :first-child {
+  width: 50px;
+  text-align-last: justify;
+  flex-shrink: 0;
+}
+
+.contact-us .text-content .list-flex .info > :last-child::before {
+  content: "|";
+  margin-right: 10px;
+}
+
+.contact-us .text-content .list-flex iframe {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 2 / 1;
 }
 
 .contact-us .text-content ul .prove {
@@ -322,6 +337,7 @@
   justify-content: space-evenly;
   align-items: center;
   row-gap: 15px;
+  margin-top: 30px;
 }
 
 .contact-us .text-content ul .prove a {
@@ -333,8 +349,40 @@
   width: 100%;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1120px) {
+  .contact-us {
+    margin: 50px;
+  }
+  .contact-us .text-content .list-flex {
+    flex-direction: row;
+  }
+
+  .contact-us .text-content .list-flex > * {
+    width: 50%;
+  }
+
+  .contact-us .text-content .list-flex .info > :first-child {
+    width: 100px;
+  }
+
+  .contact-us .text-content .list-flex .info {
+    font-size: 20px;
+  }
+
   .contact-us .text-content ul .prove img {
     max-width: 150px;
+  }
+}
+
+/* 所有標題中英文rwd */
+.title-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 576px) {
+  .title-flex {
+    display: flex;
+    column-gap: 15px;
   }
 }
