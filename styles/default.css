@@ -81,21 +81,21 @@ header #menu {
   color: burlywood;
 }
 
-nav .socialmedia-icons {
+nav .social-media-icons {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 30px;
 }
 
-nav .socialmedia-icons > * {
+nav .social-media-icons > * {
   margin: 0px 15px;
 }
 
 nav > a:hover,
 header #menu:hover,
 nav #close:hover,
-nav .socialmedia-icons .web-link:hover {
+nav .social-media-icons .web-link:hover {
   color: #d08371;
 }
 
@@ -118,7 +118,55 @@ nav .socialmedia-icons .web-link:hover {
     display: none;
   }
 
-  nav .socialmedia-icons {
+  nav .social-media-icons {
     font-size: inherit;
   }
+}
+
+footer {
+  background-color: rgb(255, 246, 218);
+  padding: 30px 25px;
+}
+
+footer > section {
+  display: flex;
+  column-gap: 1rem;
+  flex-direction: column;
+}
+
+footer > section h2 {
+  width: 170px;
+  margin: auto;
+  font-size: 20px;
+  text-align-last: justify;
+  font-weight: normal;
+}
+
+footer > section h2 .eng {
+  font-size: 16px;
+}
+
+footer > section > ul {
+  margin: 20px 0;
+  border-top: 1px solid burlywood;
+  border-bottom: 1px solid burlywood;
+  padding: 20px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+footer > section > ul > li {
+  width: 20%;
+  text-align: center;
+}
+
+footer > section > ul > li > ul {
+  list-style: none;
+  font-size: 14px;
+}
+
+footer .copy {
+  font-size: 14px;
+  text-align: right;
 }
