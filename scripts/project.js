@@ -1,6 +1,6 @@
 const projectList = [
   {
-    name: "台北市敦化南路-酒吧",
+    name: "台北敦化南路-酒吧",
     folder: "tpe-bar-store",
     image: [
       "tpe-bar-1.jpg",
@@ -11,7 +11,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市板橋龍泉街-住家",
+    name: "板橋龍泉街-住家",
     folder: "ntp-longquan-house",
     image: [
       "ntp-longquan-1.jpg",
@@ -34,7 +34,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市新莊幸福東路-廠辦",
+    name: "新莊幸福東路-廠辦",
     folder: "ntp-xingfueast-office",
     image: [
       "ntp-xingfueast-1.jpg",
@@ -45,7 +45,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市新莊幸福路-住家",
+    name: "新莊幸福路-住家",
     folder: "ntp-xingfu-house",
     image: [
       "ntp-xingfu-1.jpg",
@@ -60,7 +60,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市樹林三寶街-住家",
+    name: "樹林三寶街-住家",
     folder: "ntp-sanbao-house",
     image: [
       "ntp-sanbao-1.jpg",
@@ -77,7 +77,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市五股新五路三段-木工裝潢",
+    name: "五股新五路三段-木工裝潢",
     folder: "ntp-xin5th-carpenter",
     image: [
       "ntp-xin5th-carpenter-1.jpg",
@@ -98,7 +98,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市板橋懷德街-住家",
+    name: "板橋懷德街-住家",
     folder: "ntp-huaide-house",
     image: [
       "ntp-huaide-1.jpg",
@@ -113,7 +113,7 @@ const projectList = [
     ],
   },
   {
-    name: "台北市信義寶徠花園-住家",
+    name: "信義寶徠花園-住家",
     folder: "tpe-polarisgarden-house",
     image: [
       "tpe-polarisgarden-1.jpg",
@@ -158,7 +158,7 @@ const projectList = [
     ],
   },
   {
-    name: "新竹縣竹北-住家",
+    name: "新竹竹北-住家",
     folder: "hsh-zhubei-house",
     image: [
       "hsh-zhubei-1.jpg",
@@ -196,7 +196,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市板橋光環路-油漆工程",
+    name: "板橋光環路-油漆工程",
     folder: "ntp-guanghuan-paint",
     image: [
       "ntp-guanghuan-1.jpg",
@@ -212,7 +212,7 @@ const projectList = [
     ],
   },
   {
-    name: "新北市永和得和路-住家",
+    name: "永和得和路-住家",
     folder: "ntp-dehe-house",
     image: [
       "ntp-dehe-1.jpg",
@@ -230,7 +230,7 @@ const projectList = [
     ],
   },
   {
-    name: "台北市內湖潭美街-室內設計",
+    name: "內湖潭美街-室內設計",
     folder: "tpe-tanmei-interior",
     image: [
       "tpe-tanmei-1.jpg",
@@ -253,7 +253,7 @@ const projectList = [
     ],
   },
   {
-    name: "台北市中和民有街-木工裝潢",
+    name: "中和民有街-木工裝潢",
     folder: "ntp-minyou-carpenter",
     image: [
       "ntp-minyou-1.jpg",
