@@ -1,0 +1,71 @@
+.carousel {
+  height: 50vh;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-weight: bold;
+  min-width: 300px;
+  font-size: 30px;
+  display: flex;
+  margin: 30px auto 20px;
+  justify-content: center;
+  column-gap: 20px;
+  word-wrap: nowrap;
+  color: burlywood;
+  flex-direction: column;
+}
+
+.title span {
+  text-align: center;
+}
+
+@media screen and (min-width: 992px) {
+  .title {
+    flex-direction: row;
+  }
+}
+
+.top-line {
+  padding-top: 15px;
+  border-top: 1px solid burlywood;
+}
+
+.service-list {
+  text-align: center;
+  font-size: 18px;
+  width: 80%;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.service-process > li {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100px;
+  margin: 20px;
+  padding-bottom: 20px;
+  border-bottom: 5px solid burlywood;
+}
+
+.service-process i {
+  font-size: 80px;
+  color: burlywood;
+}
+
+@media screen and (min-width: 992px) {
+  .service-process > li {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
