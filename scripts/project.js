@@ -327,15 +327,14 @@ function loadImages(tag) {
     a.appendChild(image);
     // box.appendChild(a);
     gallary.appendChild(a);
-
-    lightGallery(document.getElementById("static-thumbnails"), {
-      thumbnail: true,
-      mode: "lg-fade",
-      closeOnTap: true,
-      download: false,
-      enableSwipe: true,
-      escKey: true,
-      thumbHeight: "0px",
-    });
   }
+  lightGallery(gallary, {
+    thumbnail: true,
+    mode: "lg-fade",
+    closeOnTap: true,
+    download: false,
+    enableSwipe: true,
+    escKey: true,
+    thumbHeight: "0px",
+  });
 }
