@@ -1,0 +1,72 @@
+.banner {
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner figcaption {
+  position: absolute;
+  top: calc(50% + 40px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  text-shadow: 3px 3px 2px wheat;
+}
+
+main {
+  margin: 0 20px;
+}
+
+#projectNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  list-style: none;
+  font-size: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid burlywood;
+}
+
+.projectTag {
+  background-color: burlywood;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    width: 80%;
+    margin: 20px auto;
+  }
+  #projectNav {
+    font-size: 16px;
+  }
+}
+
+#projectLightGallery h2 {
+  color: burlywood;
+  margin: 20px 0;
+}
+
+#static-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+#static-thumbnails img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
