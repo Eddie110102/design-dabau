@@ -21,24 +21,37 @@ const sitemapList = [
   {
     name: "產品服務",
     content: [
-      { title: "服務項目", link: "" },
-      { title: "服務流程", link: "" },
+      { title: "服務項目", link: "./service.html#service" },
+      { title: "服務流程", link: "./service.html#process" },
     ],
   },
   {
     name: "作品展示",
     content: [
-      { title: "作品1", link: "" },
-      { title: "作品2", link: "" },
-      { title: "作品3", link: "" },
+      {
+        title: "新竹竹北-住家",
+        link: "./project.html?project=hsh-zhubei-house",
+      },
+      {
+        title: "新莊幸福路-住家",
+        link: "./project.html?project=ntp-xingfu-house",
+      },
+      {
+        title: "內湖潭美街-室內設計",
+        link: "./project.html?project=tpe-tanmei-interior",
+      },
     ],
   },
   { name: "線上估價" },
   {
     name: "聯絡我們",
     content: [
-      { title: "Facebook", link: "" },
-      { title: "Line", link: "" },
+      {
+        title: "Facebook",
+        link: "https://www.facebook.com/dabao168",
+        sns: true,
+      },
+      { title: "Line", link: "https://line.me/ti/p/oLpgC2Mjzf", sns: true },
     ],
   },
 ];
@@ -52,7 +65,13 @@ for (let i = 0; i < sitemapList.length; i++) {
     const ul = document.createElement("ul");
     for (let j = 0; j < sitemapList[i].content.length; j++) {
       const secondLi = document.createElement("li");
-      secondLi.textContent = sitemapList[i].content[j].title;
+      const link = document.createElement("a");
+      link.setAttribute("href", sitemapList[i].content[j].link);
+      link.textContent = sitemapList[i].content[j].title;
+      if (sitemapList[i].content[j].sns) {
+        link.setAttribute("target", "_blank");
+      }
+      secondLi.appendChild(link);
       ul.appendChild(secondLi);
     }
     li.appendChild(ul);
