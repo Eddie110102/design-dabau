@@ -2,7 +2,9 @@ const header = document.querySelector("#header");
 
 // 首頁連結
 const logo = document.createElement("a");
-logo.setAttribute("href", "/");
+// GitHub Pages
+logo.setAttribute("href", "/design-dabau/");
+// logo.setAttribute("href", "/");
 logo.innerHTML = `<h1>
         <div>大寶室內裝潢設計</div>
         <div>DaBau Interior Design</div>
