@@ -42,6 +42,10 @@ main {
   cursor: pointer;
 }
 
+.projectTag.display {
+  background-color: #d08371;
+}
+
 @media screen and (min-width: 992px) {
   main {
     width: 80%;

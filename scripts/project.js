@@ -287,24 +287,61 @@ const projectList = [
   },
 ];
 
+const gallary = document.querySelector("#static-thumbnails");
 const projectNav = document.querySelector("#projectNav");
 const title = document.querySelector("#projectLightGallery h2");
 
+let targetData = 0;
+// init data
+const url = getProjectParam();
+if (url) {
+  const data = projectList.filter((e, i) => {
+    if (e.folder == url) {
+      loadImages(i);
+      targetData = i;
+    }
+  });
+} else {
+  loadImages(0);
+}
+
 for (let i = 0; i < projectList.length; i++) {
   const div = document.createElement("div");
-  div.setAttribute("class", "projectTag");
+  div.setAttribute("class", `projectTag ${targetData == i ? "display" : ""}`);
   div.textContent = projectList[i].name;
   div.addEventListener("click", function () {
     title.textContent = projectList[i].name;
     loadImages(i);
+
+    // change url
+    window.history.replaceState(
+      null,
+      null,
+      `?project=${projectList[i].folder}`
+    );
+
+    // change btn color
+    changeDisplay(i);
   });
   projectNav.appendChild(div);
 }
 
-// gallary
+function getProjectParam() {
+  let params = new URLSearchParams(document.location.search);
+  return params.get("project");
+}
 
-const gallary = document.querySelector("#static-thumbnails");
-loadImages(0);
+function changeDisplay(id) {
+  console.log("id", id);
+  const btnList = document.querySelectorAll(".projectTag");
+  btnList.forEach((item, i) => {
+    if (i == id) {
+      item.setAttribute("class", "projectTag display");
+    } else {
+      item.setAttribute("class", "projectTag");
+    }
+  });
+}
 
 function loadImages(tag) {
   title.textContent = projectList[tag].name;
