@@ -69,3 +69,8 @@
     border-bottom: none;
   }
 }
+
+#service,
+#process {
+  padding-top: 80px;
+}
