@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="./styles/default.css" />
     <!-- 各自頁面樣式 -->
     <link rel="stylesheet" href="./styles/inquiry.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "env",
+        });
+      })();
+    </script>
   </head>
   <body>
     <header id="header"></header>
@@ -31,83 +43,264 @@
       <h3>
         感謝您的信任與愛護！為使您的估價更公正與合理消費價格請務必詳細填寫估價單，本公司將在最短的時間內將派專人與您連絡！
       </h3>
-      <form action="#">
+      <form action="#" id="contact-form" name="customer">
         <fieldset>
           <legend>聯絡方式</legend>
           <div class="input-box">
-            <label for="name">姓名</label>
+            <label for="name" class="label"
+              >姓名<span class="required"
+                >必填&emsp;<span id="name-hint"></span></span
+            ></label>
+            <input type="text" id="name" name="name" class="input-text" />
+          </div>
+          <div class="input-box">
+            <label for="mobile" class="label"
+              >手機<span class="required"
+                >必填&emsp;<span id="mobile-hint"></span></span
+            ></label>
             <input
-              type="text"
-              placeholder="請輸入您的姓名"
-              id="name"
-              name="name"
+              type="tel"
+              id="mobile"
+              maxlength="10"
+              name="mobile"
+              class="input-text"
             />
           </div>
           <div class="input-box">
-            <label for="tel">電話</label>
+            <label for="mobile" class="label"
+              >電話&emsp;<span id="tel-hint"></span
+            ></label>
             <input
               type="tel"
               id="tel"
-              placeholder="請輸入手機/市內電話"
               maxlength="10"
               name="tel"
+              class="input-text"
             />
           </div>
           <div class="input-box">
-            <label for="email">信箱</label>
+            <label for="email" class="label"
+              >信箱<span class="required"
+                >必填&emsp;<span id="email-hint"></span></span
+            ></label>
             <input
               type="email"
               name="email"
               id="email"
               placeholder="請輸入您的電子信箱"
+              class="input-text"
             />
           </div>
+        </fieldset>
+        <fieldset>
+          <legend>建築資訊</legend>
           <div class="input-box">
-            <label for="place">招標區域</label>
-            <select name="city" id="place"></select>
-            <select name="area" id="area"></select>
+            <label for="city" class="label"
+              >區域<span class="required">必填</span></label
+            >
+            <div class="multiple-choice">
+              <select name="city" id="city" class="input-text">
+                <option value="default">請選擇縣市</option>
+              </select>
+              <select name="area" id="area" class="input-text"></select>
+            </div>
           </div>
           <div class="input-box">
-            <label for="type">發包屬性</label>
-            <select name="type" id="type">
-              <option value="store">店家</option>
-              <option value="privacy">私人</option>
-              <option value="public">公共工程</option>
-              <option value="company">公司行號</option>
-              <option value="other">其他</option>
+            <label for="type" class="label"
+              >性質<span class="required">必填</span></label
+            >
+            <select name="type" id="type" class="input-text">
+              <option value="店家">店家</option>
+              <option value="住宅">住宅</option>
+              <option value="公共工程">公共工程</option>
+              <option value="公司行號">公司行號</option>
+              <option value="其他">其他</option>
             </select>
           </div>
           <div class="input-box">
-            <label>婚姻狀況</label>
-            <label
-              ><input type="radio" name="marriage" value="single" />單身</label
+            <label class="label"
+              >物件種類<span class="required">必填</span></label
             >
-            <label
-              ><input type="radio" name="marriage" value="married" />已婚</label
-            >
+            <select name="category" class="input-text">
+              <option value="透天">透天</option>
+              <option value="華廈">華廈</option>
+              <option value="公寓">公寓</option>
+              <option value="別墅">別墅</option>
+              <option value="整棟套房">整棟套房</option>
+              <option value="商業空間">商業空間</option>
+              <option value="辦公大樓">辦公大樓</option>
+            </select>
           </div>
           <div class="input-box">
-            <label>家庭成員</label>
-            <label
-              ><input type="radio" name="family" value="male" />男子宿舍</label
+            <label class="label">室內格局</label>
+            <div class="multiple-choice">
+              <select name="bedroom" class="input-text">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="others">其他</option>
+              </select>
+              房&emsp;/&emsp;
+              <select name="public-space" class="input-text">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="others">其他</option>
+              </select>
+              廳&emsp;/&emsp;
+              <select name="bathroom" class="input-text">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="others">其他</option>
+              </select>
+              衛
+            </div>
+          </div>
+          <div class="input-box">
+            <label for="square" class="label">坪數</label>
+            <input
+              type="number"
+              name="square"
+              id="square"
+              min="0"
+              class="input-text"
+            />
+          </div>
+          <div class="input-box">
+            <label for="floor" class="label">樓層</label>
+            <input type="tel" name="floor" id="floor" class="input-text" />
+          </div>
+          <div class="input-box">
+            <span class="label"
+              >搬運需求<span class="required">必填</span></span
             >
-            <label
-              ><input
-                type="radio"
-                name="family"
-                value="female"
-              />女子宿舍</label
-            >
-            <label
-              ><input type="radio" name="family" value="mix" />混合宿舍</label
-            >
-            <label
-              ><input type="radio" name="family" value="alone" />單人宿舍</label
-            >
+            <div class="multiple-choice">
+              <label
+                ><input
+                  type="radio"
+                  name="elevator"
+                  value="有電梯"
+                />有電梯</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="elevator"
+                  value="沒電梯"
+                />沒電梯</label
+              >
+            </div>
           </div>
         </fieldset>
+        <fieldset>
+          <legend>建築需求</legend>
+          <div class="input-box">
+            <span class="label">服務項目</span>
+            <div class="multiple-choice">
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="清潔公司"
+                />清潔公司</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="水電工程"
+                />水電工程</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="拆除清運"
+                />拆除清運</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="木作工程"
+                />木作工程</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="木作隔間"
+                />木作隔間</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="木工裝潢"
+                />木工裝潢</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="店面規劃"
+                />店面規劃</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="室內設計"
+                />室內設計</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="油漆工程"
+                />油漆工程</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="service"
+                  value="泥作工程"
+                />泥作工程</label
+              >
+            </div>
+          </div>
 
-        <input type="submit" value="送出" id="submit" />
+          <div class="input-box">
+            <label class="label" for="start"
+              >預計動工日期<span class="required">必填</span></label
+            >
+            <input type="date" name="start" id="start" class="input-text" />
+          </div>
+          <div class="input-box">
+            <label class="label" for="end"
+              >預計完工期限<span class="required">必填</span></label
+            >
+            <input type="date" name="end" id="end" class="input-text" />
+          </div>
+          <div class="input-box">
+            <label for="memo" class="label">備註</label>
+            <textarea name="memo" id="memo" class="input-text"></textarea>
+          </div>
+        </fieldset>
+        <div class="btns">
+          <input type="reset" value="清空" id="reset" />
+          <input type="submit" value="送出" id="submit" />
+        </div>
       </form>
     </main>
 
@@ -115,6 +308,7 @@
 
     <script src="./scripts/navbar.js"></script>
     <script src="./scripts/menu.js"></script>
+    <script src="./scripts/city.js"></script>
     <script src="./scripts/footer.js"></script>
     <script src="./scripts/inquiry.js"></script>
   </body>

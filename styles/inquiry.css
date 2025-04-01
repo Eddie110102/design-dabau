@@ -29,3 +29,79 @@ h3 {
   padding-bottom: 20px;
   border-bottom: 1px solid burlywood;
 }
+
+form {
+  margin: 30px 0;
+}
+
+fieldset {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+legend {
+  padding: 0 10px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.label {
+  margin-bottom: 2px;
+  position: relative;
+}
+
+.input-text {
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  /* margin-bottom: 30px; */
+}
+
+.multiple-choice {
+  display: flex;
+  column-gap: 15px;
+  flex-wrap: wrap;
+}
+
+.multiple-choice [type="radio"],
+.multiple-choice [type="checkbox"] {
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.required {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+
+.btns input {
+  border: 1px solid lightgray;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btns input:hover,
+.btns input#submit:hover {
+  background-color: #d1afa7;
+  color: white;
+}
+
+.btns input#submit {
+  background-color: burlywood;
+}
