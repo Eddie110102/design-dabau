@@ -425,11 +425,3 @@ county_box.addEventListener("change", () => {
     district_box.innerHTML += `<option value="${district}">${district}</option>`;
   });
 });
-
-district_box.addEventListener("change", () => {
-  const selected_district =
-    district_box.options[district_box.selectedIndex].value;
-  const zipcode_value = database[selected_county][selected_district];
-
-  zipcode_box.value = `${zipcode_value}`;
-});

@@ -48,16 +48,15 @@
           <legend>聯絡方式</legend>
           <div class="input-box">
             <label for="name" class="label"
-              >姓名<span class="required"
-                >必填&emsp;<span id="name-hint"></span></span
-            ></label>
+              >姓名<span class="required">必填</span></label
+            >
             <input type="text" id="name" name="name" class="input-text" />
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label for="mobile" class="label"
-              >手機<span class="required"
-                >必填&emsp;<span id="mobile-hint"></span></span
-            ></label>
+              >手機<span class="required">必填</span></label
+            >
             <input
               type="tel"
               id="mobile"
@@ -65,11 +64,10 @@
               name="mobile"
               class="input-text"
             />
+            <span class="hint"></span>
           </div>
           <div class="input-box">
-            <label for="mobile" class="label"
-              >電話&emsp;<span id="tel-hint"></span
-            ></label>
+            <label for="mobile" class="label">電話</label>
             <input
               type="tel"
               id="tel"
@@ -77,19 +75,20 @@
               name="tel"
               class="input-text"
             />
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label for="email" class="label"
-              >信箱<span class="required"
-                >必填&emsp;<span id="email-hint"></span></span
-            ></label>
+              >信箱<span class="required">必填</span></label
+            >
             <input
               type="email"
               name="email"
               id="email"
-              placeholder="請輸入您的電子信箱"
+              placeholder="dabau@example.com"
               class="input-text"
             />
+            <span class="hint"></span>
           </div>
         </fieldset>
         <fieldset>
@@ -104,24 +103,28 @@
               </select>
               <select name="area" id="area" class="input-text"></select>
             </div>
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label for="type" class="label"
               >性質<span class="required">必填</span></label
             >
             <select name="type" id="type" class="input-text">
+              <option value="default">請選擇</option>
               <option value="店家">店家</option>
               <option value="住宅">住宅</option>
               <option value="公共工程">公共工程</option>
               <option value="公司行號">公司行號</option>
               <option value="其他">其他</option>
             </select>
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label class="label"
               >物件種類<span class="required">必填</span></label
             >
             <select name="category" class="input-text">
+              <option value="default">請選擇</option>
               <option value="透天">透天</option>
               <option value="華廈">華廈</option>
               <option value="公寓">公寓</option>
@@ -130,11 +133,14 @@
               <option value="商業空間">商業空間</option>
               <option value="辦公大樓">辦公大樓</option>
             </select>
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label class="label">室內格局</label>
             <div class="multiple-choice">
               <select name="bedroom" class="input-text">
+                <option value="default">請選擇</option>
+
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -145,26 +151,28 @@
               </select>
               房&emsp;/&emsp;
               <select name="public-space" class="input-text">
+                <option value="default">請選擇</option>
+
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
-                <option value="others">其他</option>
-              </select>
-              廳&emsp;/&emsp;
+                <option value="others">其他</option></select
+              >廳&emsp;/&emsp;
               <select name="bathroom" class="input-text">
+                <option value="default">請選擇</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
-                <option value="others">其他</option>
-              </select>
-              衛
+                <option value="others">其他</option></select
+              >衛
             </div>
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label for="square" class="label">坪數</label>
@@ -173,12 +181,31 @@
               name="square"
               id="square"
               min="0"
+              step="any"
               class="input-text"
             />
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label for="floor" class="label">樓層</label>
-            <input type="tel" name="floor" id="floor" class="input-text" />
+            <div class="multiple-choice">
+              <label
+                ><input
+                  type="radio"
+                  name="underground"
+                  value="地上"
+                />地上</label
+              >
+              <label
+                ><input
+                  type="radio"
+                  name="underground"
+                  value="地下"
+                />地下</label
+              >
+              <input type="tel" name="floor" id="floor" class="input-text" />樓
+            </div>
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <span class="label"
@@ -200,6 +227,7 @@
                 />沒電梯</label
               >
             </div>
+            <span class="hint"></span>
           </div>
         </fieldset>
         <fieldset>
@@ -278,6 +306,7 @@
                 />泥作工程</label
               >
             </div>
+            <span class="hint"></span>
           </div>
 
           <div class="input-box">
@@ -285,16 +314,19 @@
               >預計動工日期<span class="required">必填</span></label
             >
             <input type="date" name="start" id="start" class="input-text" />
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label class="label" for="end"
               >預計完工期限<span class="required">必填</span></label
             >
             <input type="date" name="end" id="end" class="input-text" />
+            <span class="hint"></span>
           </div>
           <div class="input-box">
             <label for="memo" class="label">備註</label>
             <textarea name="memo" id="memo" class="input-text"></textarea>
+            <span class="hint"></span>
           </div>
         </fieldset>
         <div class="btns">
