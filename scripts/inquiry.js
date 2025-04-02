@@ -207,15 +207,29 @@ form.addEventListener("submit", function (event) {
     form["end"].classList.remove("error");
   }
 
-  // these IDs from the previous steps
-  // emailjs.sendForm("service_key", "template_key", this).then(
-  //   () => {
-  //     console.log("SUCCESS!");
-  //   },
-  //   (error) => {
-  //     console.log("FAILED...", error);
-  //   }
-  // );
+  const result = document.querySelector("#resultHint");
+  const hintList = document.querySelectorAll(".hint");
+
+  for (let h = 0; h < hintList.length; h++) {
+    if (hintList[h].innerText.length > 0) {
+      break;
+    } else {
+      // these IDs from the previous steps
+      emailjs.sendForm("service_key", "template_key", this).then(
+        () => {
+          console.log("SUCCESS!");
+          result.classList.add("show");
+          result.children[0].textContent = "傳送成功";
+        },
+        (error) => {
+          console.log("FAILED...", error);
+
+          result.classList.add("show");
+          result.children[0].textContent = "傳送失敗";
+        }
+      );
+    }
+  }
 });
 
 // 預設月曆最小範圍
