@@ -138,7 +138,7 @@ textarea {
   height: 100vh;
 }
 
-#resultHint > div {
+#resultHint > .info {
   text-align: center;
   position: relative;
   width: 300px;
@@ -148,8 +148,31 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px 20px;
+  background-color: #fff;
+}
+
+#resultHint #alertClose {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px;
 }
 
 #resultHint.show {
   display: block;
+}
+
+@media screen and (min-width: 992px) {
+  .data {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .data > fieldset {
+    width: 50%;
+    position: sticky;
+    top: 100px;
+  }
 }

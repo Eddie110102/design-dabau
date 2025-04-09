@@ -68,7 +68,7 @@ nav.active {
   left: 0;
 }
 
-nav #close {
+nav #menuClose {
   position: absolute;
   right: 40px;
   top: 15px;
@@ -94,7 +94,7 @@ nav .social-media-icons > * {
 
 nav > a:hover,
 header #menu:hover,
-nav #close:hover,
+nav #menuClose:hover,
 nav .social-media-icons .web-link:hover {
   color: #d08371;
 }
@@ -114,7 +114,7 @@ nav .social-media-icons .web-link:hover {
   }
 
   #menu,
-  #close {
+  #menuClose {
     display: none;
   }
 

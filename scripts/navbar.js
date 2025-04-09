@@ -72,7 +72,7 @@ nav.appendChild(snsBox);
 // close
 
 const closeBtn = document.createElement("div");
-closeBtn.setAttribute("id", "close");
+closeBtn.setAttribute("id", "menuClose");
 closeBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
 
 nav.appendChild(closeBtn);

@@ -1,6 +1,6 @@
 let isMenuOpen = false;
 const openMenu = document.querySelector("#menu");
-const closeMenu = document.querySelector("#close");
+const closeMenu = document.querySelector("#menuClose");
 const menuList = document.querySelector("nav");
 openMenu.addEventListener("click", function () {
   isMenuOpen = true;

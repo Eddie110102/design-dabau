@@ -1,4 +1,10 @@
-const form = document.querySelector("#contact-form");
+const form = document.querySelector("#contactForm");
+const result = document.querySelector("#resultHint");
+const hintList = document.querySelectorAll(".hint");
+const resultCloseBtn = document.querySelector("#resultHint #alertClose");
+const resultText = document.querySelector("#resultHint h2");
+const body = document.querySelector("body");
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   // 檢查表單
@@ -199,36 +205,55 @@ form.addEventListener("submit", function (event) {
   // 完工日
   const end = form["end"].value;
   const endHint = form["end"].nextElementSibling;
+
   if (end == null || end == "") {
     endHint.textContent = "請選擇日期";
+    form["end"].classList.add("error");
+  } else if (start > end) {
+    endHint.textContent = "您選擇的預計完工日早於預計動工日";
     form["end"].classList.add("error");
   } else {
     endHint.textContent = "";
     form["end"].classList.remove("error");
   }
 
-  const result = document.querySelector("#resultHint");
-  const hintList = document.querySelectorAll(".hint");
-
+  let pass = false;
   for (let h = 0; h < hintList.length; h++) {
     if (hintList[h].innerText.length > 0) {
+      pass = false;
       break;
     } else {
-      // these IDs from the previous steps
-      emailjs.sendForm("service_key", "template_key", this).then(
-        () => {
-          console.log("SUCCESS!");
-          result.classList.add("show");
-          result.children[0].textContent = "傳送成功";
-        },
-        (error) => {
-          console.log("FAILED...", error);
-
-          result.classList.add("show");
-          result.children[0].textContent = "傳送失敗";
-        }
-      );
+      pass = true;
     }
+  }
+
+  if (pass) {
+    // these IDs from the previous steps
+    // emailjs.sendForm("service_template", "template_key", this).then(
+    emailjs.sendForm(CONFIG.SERVICE_KEY, CONFIG.TEMPLATE_KEY, this).then(
+      () => {
+        console.log("SUCCESS!");
+        result.classList.add("show");
+        resultText.textContent = "傳送成功";
+        body.style.overflowY = "hidden";
+      },
+      (error) => {
+        console.log("FAILED...", error);
+
+        result.classList.add("show");
+        resultText.textContent = "傳送失敗";
+        body.style.overflowY = "hidden";
+      }
+    );
+  } else {
+    const wrongArray = document.querySelectorAll(".error");
+    const changeTo =
+      window.pageYOffset + wrongArray[0].getBoundingClientRect().top - 120;
+    window.scrollTo({
+      top: changeTo,
+      left: 0,
+      behavior: "smooth",
+    });
   }
 });
 
@@ -246,3 +271,32 @@ const now = `${new Date().getFullYear()}-${
 
 start.setAttribute("min", now);
 end.setAttribute("min", now);
+
+resultCloseBtn.addEventListener("click", function () {
+  result.classList.remove("show");
+  body.style.overflowY = "auto";
+  resultText.textContent = "";
+  form.querySelectorAll("input, textarea").forEach((el) => {
+    if (el.type !== "reset" || el.type !== "submit") {
+      el.value = "";
+    }
+    if (el.type == "reset") {
+      el.value = "清空";
+    } else if (el.type == "submit") {
+      el.value = "送出";
+    }
+  });
+
+  form.querySelectorAll("select").forEach((el) => {
+    el.value = "default";
+    if (el.id == "area") {
+      el.innerHTML = "";
+    }
+  });
+
+  form
+    .querySelectorAll("input[type=radio],input[type=checkbox]")
+    .forEach((el) => {
+      el.checked = false;
+    });
+});
